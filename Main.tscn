@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0bqemnksd0aq"]
+
+[ext_resource type="Script" uid="uid://dagcqg1coqisw" path="res://Main.cs" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://buo03052uetmf" path="res://BoardView.tscn" id="2_r0du0"]
+
+[node name="Main" type="Node" unique_id=2013477406]
+script = ExtResource("1_uu6xs")
+
+[node name="BoardView" parent="." unique_id=2039491812 instance=ExtResource("2_r0du0")]

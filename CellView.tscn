@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d1vp0ympy7qxl"]
+
+[ext_resource type="Texture2D" uid="uid://bgeckidmv0vka" path="res://textures/Square.png" id="1_u4vnn"]
+[ext_resource type="Script" uid="uid://caqg7808b0dpx" path="res://CellView.cs" id="2_ols7c"]
+
+[node name="CellView" type="TextureButton" unique_id=540373855]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_u4vnn")
+script = ExtResource("2_ols7c")
+
+[connection signal="pressed" from="." to="." method="OnPressed"]
