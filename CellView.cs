@@ -1,7 +1,4 @@
 using Godot;
-using System.Threading.Tasks;
-using System;
-
 
 
 public partial class CellView : TextureButton

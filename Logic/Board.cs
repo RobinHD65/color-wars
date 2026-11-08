@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Threading.Tasks;
 using Godot;
 
 public delegate void getExplosionsEventHandler(List<Cell[,]> boards);
@@ -142,12 +139,20 @@ public partial class Board : GodotObject
     }
     public Color CheckWin() //Returns the Color that won, if game is still ongoing it returns Color.None
     {
+        
+        Color firstColor = Color.None;
         foreach (Cell cell in Cells)
         {
-            if (cell.color != ColorToMove && cell.color != Color.None) 
-                return Color.None;
+            if (cell.color != Color.None)
+            {
+                if (firstColor == Color.None)
+                    firstColor = cell.color;
+                else if (firstColor != cell.color)
+                    return Color.None;
+            }
+
         } 
-        return ColorToMove;
+        return firstColor;
     }
 }
 

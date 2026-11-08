@@ -13,7 +13,7 @@ config_version=5
 config/name="ColorWars"
 run/main_scene="uid://b0bqemnksd0aq"
 config/features=PackedStringArray("4.7", "C#", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://bxlkh1eix2v6t"
 
 [dotnet]
 
