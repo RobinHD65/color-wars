@@ -9,6 +9,7 @@ public partial class Bot : GodotObject
 	private Stopwatch stopwatch = new Stopwatch();
 	private int calcTime;
 	public int lastDepth;
+	public int lastEvaluation;
 	public Bot(Board gameState)
 	{
 		GameState = gameState;
@@ -93,7 +94,7 @@ public partial class Bot : GodotObject
 		}
 		else // Gegner ist dran, wir müssen vom Schlimmsten ausgehen (niedrigster Score)
 		{
-			int minScore = int.MaxValue;
+			int minScore = int.MaxValue / 2;
 			foreach (Vector2I move in possibleMoves)
 			{
 				if (GameState.MakeMove(move, false))
@@ -147,7 +148,9 @@ public partial class Bot : GodotObject
 			}
 			calculatedMove = bestMoveTD;
 			lastDepth++;
+			lastEvaluation = maxScore;
 		}
 		return calculatedMove;
 	}
 }
+

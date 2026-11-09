@@ -109,7 +109,10 @@ public partial class BoardView : Control
 	{
 		Vector2I move = bot.CalculateMove();
 		OnCellClicked(move);
-		searchStats.Text = $"Tiefe: {bot.lastDepth}";
+		searchStats.Text = $"""
+			Tiefe: {bot.lastDepth}
+			Bewertung: {bot.lastEvaluation}
+			""";
 	}
 	public override void _Process(double delta)
 	{

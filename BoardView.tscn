@@ -37,6 +37,6 @@ text = "Zug machen"
 layout_mode = 0
 offset_top = 509.0
 offset_right = 655.0
-offset_bottom = 549.0
+offset_bottom = 647.0
 
 [connection signal="pressed" from="Button" to="." method="MakeBotMove"]
