@@ -14,29 +14,30 @@ script = ExtResource("1_p0ybc")
 
 [node name="colorToMoveIndicator" type="ColorRect" parent="." unique_id=1969922847]
 layout_mode = 0
-offset_right = 476.0
-offset_bottom = 476.0
+offset_right = 880.0
+offset_bottom = 880.0
 color = Color(0.52040946, 0.5204096, 1.92523e-07, 1)
 
 [node name="Cells" type="GridContainer" parent="." unique_id=1877668084]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 2.0
-offset_right = 41.0
-offset_bottom = 42.0
+offset_right = 81.0
+offset_bottom = 82.0
 columns = 7
 
 [node name="Button" type="Button" parent="." unique_id=1737355679]
 layout_mode = 0
-offset_top = 479.0
+offset_top = 880.0
 offset_right = 107.0
-offset_bottom = 510.0
+offset_bottom = 920.0
 text = "Zug machen"
 
 [node name="SearchStats" type="RichTextLabel" parent="." unique_id=793049654]
 layout_mode = 0
-offset_top = 509.0
-offset_right = 655.0
-offset_bottom = 647.0
+offset_left = 2.0
+offset_top = 920.0
+offset_right = 657.0
+offset_bottom = 1080.0
 
 [connection signal="pressed" from="Button" to="." method="MakeBotMove"]

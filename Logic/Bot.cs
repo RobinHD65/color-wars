@@ -115,8 +115,6 @@ public partial class Bot : GodotObject
 		List<Vector2I> possibleMoves = GenerateMoves();
 		if (possibleMoves.Count == 0) return new Vector2I(-1, -1); // Fallback
 
-		int maxScore = int.MinValue;
-		Vector2I bestMoveTD = possibleMoves[0];
 		Vector2I calculatedMove = possibleMoves[0];
 		// Die Farbe des Bots für diesen ganzen Rechenbaum merken
 		Color botColor = GameState.ColorToMove;
@@ -127,6 +125,8 @@ public partial class Bot : GodotObject
 		//Zeit
 		for (int depth = 0; depth < 20; depth++)
 		{
+			int maxScore = int.MinValue;
+			Vector2I bestMoveTD = possibleMoves[0];
 			int alpha = int.MinValue;
 			int beta = int.MaxValue;
 			foreach (Vector2I move in possibleMoves)
