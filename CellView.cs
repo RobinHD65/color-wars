@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Godot;
 
 
@@ -14,19 +13,22 @@ public partial class CellView : TextureButton
 		switch (cell.color)
 		{
 			case Color.Blue:
-				DrawCircle(Size / 2, 20, Colors.RoyalBlue);
+				DrawCircle(Size / 2, Size.X / 3, Colors.RoyalBlue);
 				break;
 			case Color.Red:
-				DrawCircle(Size / 2, 20, new Godot.Color("#D95D5D"));
+				DrawCircle(Size / 2, Size.X / 3, new Godot.Color("#D95D5D"));
 				break;
 		}
 		if (cell.color != Color.None)
 		{
-			string text = cell.points.ToString();
-			Vector2 textSize = font.GetStringSize(text);
-			Vector2 position = Size / 2 - textSize / 2;
-			position.Y += textSize.Y * 3 / 4;
-			DrawString(font, position, text);
+    		string text = cell.points.ToString();
+    		int fontSize = 32;
+    		Vector2 textSize = font.GetStringSize(text, HorizontalAlignment.Left, -1, fontSize);
+    		Vector2 position = new Vector2(
+        		(Size.X - textSize.X) / 2,
+        		(Size.Y + textSize.Y) / 2 - 12 
+    		);
+    		DrawString(font, position, text, HorizontalAlignment.Left, -1, fontSize);
 		}
 	}
 	public void OnPressed()

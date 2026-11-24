@@ -34,6 +34,7 @@ public partial class BoardView : Control
 	{
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
+		grid.Columns = sizeY;
 		board.StartGame(sizeX, sizeY);
 		cellView = new CellView[sizeX, sizeY];
 		for (int y = 0; y < sizeY; y++)
